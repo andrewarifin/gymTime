@@ -1,0 +1,55 @@
+.thumbnail {
+  height: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.card-panel {
+  text-align: center;
+}
+.exerciseTitle {
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  font-size:
+}
+
+.availability {
+  color: white;
+  margin-top: 2px;
+  margin-bottom: 0px;
+}
+
+.col {
+  margin-top: 20px;
+}
+
+.row {
+  margin-bottom: 0px;
+}
+
+.input-field {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.workout_cart {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+  background-color: #ffd54f;
+  color: white;
+  font-size: 2.1rem;
+  text-align: center;
+}
+
+.view_cart {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  margin: 0;
+  color: white; 
+}
