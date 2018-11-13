@@ -1,0 +1,14 @@
+.scanner{
+    width: 400px;
+    overflow: hidden;
+    display: block;
+    height: 400px;
+}
+
+.scannerCenter{
+    text-align: center;
+}
+
+#glass{
+    margin-left: -400px;
+}
