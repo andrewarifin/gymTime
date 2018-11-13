@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Gym Time</title>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link href="createUser.css" rel="stylesheet" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <nav>
+    <div class="nav-wrapper amber lighten-2">
+      <a href="#" class="brand-logo center">Gym Time</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+      </ul>
+    </div>
+  </nav>
+  </head>
+  <body>
+   <div class="container">
+    <form class="form blue-gr" action="/login">
+      <label for="user">Username: </label>
+        <input class="form-control" id="email" name="user" autofocus required>
+      <label for="password">Password: </label>
+      <input class="form-control" id="password" type="password" class="validate">
+      <br/>
+      <button class="btn waves-effect waves-light blue-grey" name="action" onclick="M.toast({html: 'User Created'})">Create User
+        <i class="material-icons right">person</i>
+      </button>
+    </form>   
+  </div>
+</html>
