@@ -7,10 +7,23 @@
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <script type="text/javascript" src="instascan.min.js"></script>
+      <link type="text/css" rel="stylesheet" href="scannerStyle.css"/>
   </head>
   <body>
-    <script type="text/javascript" src="js/materialize.min.js"></script>  
-    <video id="preview"></video>
+    <nav>
+          <div class="nav-wrapper amber lighten-2">
+            <a href="#" class="brand-logo center">Scan Equipment</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+          </div>
+    </nav>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <center>
+      <div class="scannerCenter">
+        <div class="scanner">
+          <video id="preview"></video>
+        </div>
+      </div>
+    </center>
     <script type="text/javascript">
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
       scanner.addListener('scan', function (content) {
