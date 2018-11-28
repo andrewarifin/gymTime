@@ -6,7 +6,7 @@
 }
 
 .card-panel {
-  
+  text-align: center;
 }
 .exerciseTitle {
   color: black;
@@ -24,12 +24,17 @@
 
 .col {
   margin-top: 20px;
-  margin-left: 200px;
-  margin-right: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 .row {
   margin-bottom: 0px;
+  position: fixed;
+  left: 50%;
+  top: 5%;
+  margin-left: -180px;
 }
 
 .input-field {
@@ -49,11 +54,13 @@ h1 {
   display: inline;
 }
 
-.btn span.icon {
-  background: url("./imgs/calendar.jpg") no-repeat;
-  float: left;
-  width: 10px;
-  height: 10px;
+
+.btn {
+
+}
+
+.date {
+  text-align: center;
 }
 
 .button {
@@ -67,29 +74,32 @@ h1 {
   font-size: 30px;
   margin: 4px 2px;
   cursor: pointer;
-}
-.button .icon {
-  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXLOFS5Yh6btqKwRrNAZ_ItE48ONJsc7jgn61rIwCVsuaDDtSK9A) no-repeat;
-  float: left;
-  width: 20px;
-  height: 20px;
-  margin-right: 10px
-}  
-.button .span {
-  float: left;
-  width: 20px;
-  height: 20px;
-}  
+  margin: auto;
+} 
 
 .buttonBack {
-  font-size: 30px;
+  font-size: 20px;
   padding: 7px 14px;
-  margin-left: 200px;
+  margin-left: 7px;
 }
 
 .buttonDone {
-  font-size: 30px;
+  font-size: 20px;
   padding: 7px 14px;
-  margin-left: 905px;
+  float: right;
+  margin-right: 7px;
 }
+
+.workouts {
+  text-align: center;
+}
+
+.workout_button {
+  padding: 10px 10px;
+  width: 75%;
+  background-color: #bdbdbd;
+  border-radius: 8px;
+}
+
+
 
