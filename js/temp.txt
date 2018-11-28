@@ -1,0 +1,10 @@
+<div class="row">
+        <div class="col-sm-6">
+            <div class="input-group date" data-provide="datepicker">
+                <input type="icon" class="form-control" id="data-date">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div>
+        </div>
+    </div>
