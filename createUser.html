@@ -18,15 +18,29 @@
   </head>
   <body>
    <div class="container">
-    <form class="form blue-gr" action="/login">
+    <div class="form blue-gr" action="/login">
       <label for="user">Username: </label>
-        <input class="form-control" id="email" name="user" autofocus required>
+        <input class="form-control" id="email_field" name="user" autofocus required>
       <label for="password">Password: </label>
-      <input class="form-control" id="password" type="password" class="validate">
+      <input class="form-control" id="password_field" type="password" class="validate">
       <br/>
-      <button class="btn waves-effect waves-light blue-grey" name="action" onclick="M.toast({html: 'User Created'})">Create User
+      <button class="btn waves-effect waves-light blue-grey" name="action" onclick="create_account()">Create User
         <i class="material-icons right">person</i>
       </button>
-    </form>   
+    </div>   
   </div>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBK0PkLlKuIb2ABAgjCYuaCizqjUFI_Le8",
+      authDomain: "gym-time-login.firebaseapp.com",
+      databaseURL: "https://gym-time-login.firebaseio.com",
+      projectId: "gym-time-login",
+      storageBucket: "gym-time-login.appspot.com",
+      messagingSenderId: "126609509380"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="createUser.js"></script>
 </html>
