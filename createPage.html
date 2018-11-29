@@ -60,11 +60,26 @@
     <div class="workout_cart">
       <!-- <i class="material-icons arrow_up">arrow_drop_up</i> -->
       <button class="view_cart" onclick="show_cart();">View Current Workout</button>
+      <button class="btn waves-effect waves-light blue-grey" onclick="logout(); return false">Log Out
+      </button>
     </div>
 
-
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBK0PkLlKuIb2ABAgjCYuaCizqjUFI_Le8",
+        authDomain: "gym-time-login.firebaseapp.com",
+        databaseURL: "https://gym-time-login.firebaseio.com",
+        projectId: "gym-time-login",
+        storageBucket: "gym-time-login.appspot.com",
+        messagingSenderId: "126609509380"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./js/create_page.js"></script>
+    <script src="login.js"></script>
   </body>
 </html>
