@@ -2,7 +2,7 @@
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    window.location.href = '/createPage.html';
+    window.location.href = 'https://andrewarifin.github.io/gymTime/homepage.html';
     var user = firebase.auth().currentUser.displayName;
     if (user != null){
     	window.alert(user)
@@ -16,7 +16,7 @@ function login(){
 
 	var userEmail = document.getElementById("email_field").value;
 	var userPass = document.getElementById("password_field").value;
-	console.log(userEmail); 
+	console.log(userEmail);
 
 
 	firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
