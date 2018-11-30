@@ -7,11 +7,21 @@
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <link type="text/css" rel="stylesheet" href="./createPage.css"  media="screen,projection"/>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.1.0/nouislider.css" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.1.0/nouislider.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
+    <div id="mySidenav" class="cartNav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+
     <nav>
-      <div class="nav-wrapper amber lighten-2">
+      <div class="nav-wrapper amber lighten-1">
         <a href="#" class="brand-logo center">Gym Time</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
       </div>
@@ -27,44 +37,92 @@
         <input id="timeIn" type="text" class="timepicker"></input>
     </div>
 
-    <div class="input-field">
+    <div class="input-field date_input">
         <label for="timeOut">Time Out:</label>
-        <input id="timeOut" type="text" class="timeoutpicker"></input>
+        <input disabled id="timeOut" type="text" class="timeoutpicker"></input>
     </div>
 
     <nav>
-      <div class="nav-wrapper grey lighten-1">
+      <div class="nav-wrapper amber lighten-1">
         <a href="#" class="brand-logo center">Equipment</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
       </div>
     </nav>
 
-    <div class="row" id="availableExercises" style="display: none;">
-      <div class="col s6 m5">
-        <div class="card-panel grey lighten-1">
-          <img src="./img/bench_press.png" class="circle thumbnail">
-          <p class="exerciseTitle">Bench Press</p>
-          <p class="availability">3/4 Available</p>
-        </div>
-      </div>
-
-      <div class="col s6 m5">
-        <div class="card-panel grey lighten-1">
+    <div class="row" id="availableExercises">
+      <!-- <div class="col s6 m5">
+        <div class="modal-trigger card-panel grey lighten-1" href="#intervalModal">
           <img src="./img/treadmill.png" class="circle thumbnail">
           <p class="exerciseTitle">Treadmill</p>
           <p class="availability">3/4 Available</p>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div class="workout_cart">
-      <!-- <i class="material-icons arrow_up">arrow_drop_up</i> -->
-      <button class="view_cart" onclick="show_cart();">View Current Workout</button>
+        <!-- <p class="view_cart" onclick="show_cart();">View Current Workout</p> -->
+        <p class="view_cart modal-trigger" href="#modal1">View Current Workout</p>
+
+          <!-- Modal Structure -->
+
     </div>
 
+    <div id="modal1" class="modal bottom-sheet">
+      <div class="modal-content">
+        <table>
+          <tbody id="addedWorkouts">
+            <!-- <tr>
+              <div class="row">
+                <div class="col s4">
+                  <img src="./img/treadmill.png" class="circle thumbnail">
+                  <p class="workoutTitle">Treadmill</p>
+                </div>
+                <div class="timeColumn col s8">
+                  <p class="timeText">Start: </p>
+                  <p class="timeText">End: </p>
+                </diV>
+              </div>
+              </div>
+              <hr>
+            </tr> -->
+          </tbody>
+        </table>
+      <div class="modal-footer">
+        <a href="" class="modal-close waves-effect waves-green btn">Checkout</a>
+        <a class="modal-close waves-effect waves-green btn">Cancel</a>
+      </div>
+    </div>
+
+    <div id="intervalModal" class="modal">
+      <div class="modal-content">
+        <img src="./img/treadmill.png" class="circle thumbnail">
+        <p class="modalTitle">Treadmill</p>
+        <div id="test-slider"></div>
+      </div>
+      <div class="modal-footer">
+        <div class="decisionButtons">
+          <a class="waves-effect waves-light btn"><i class="material-icons left">check</i>Book</a>
+          <a class="waves-effect waves-light btn"><i class="material-icons left">close</i>Cancel</a>
+        </div>
+      </div>
+    </div>
 
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./js/create_page.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBmIY6NX7gJ5USZeriiWPJNwttQxbpUR3E",
+        authDomain: "gymtime-38964.firebaseapp.com",
+        databaseURL: "https://gymtime-38964.firebaseio.com",
+        projectId: "gymtime-38964",
+        storageBucket: "gymtime-38964.appspot.com",
+        messagingSenderId: "855817463288"
+      };
+      firebase.initializeApp(config);
+    </script>
   </body>
 </html>

@@ -32,6 +32,7 @@
 .input-field {
   margin-left: 5px;
   margin-right: 5px;
+  margin-top: 20px;
 }
 
 .workout_cart {
@@ -40,7 +41,7 @@
   width: 100%;
   height: 56px;
   line-height: 56px;
-  background-color: #ffd54f;
+  background-color: #ffca28;
   color: white;
   font-size: 2.1rem;
   text-align: center;
@@ -51,5 +52,70 @@
   vertical-align: middle;
   line-height: normal;
   margin: 0;
-  color: white; 
+  color: white;
+}
+
+.cartNav {
+    height: 0; /* 100% Full-height */
+    width: 100%; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    bottom: 0; /* Stay at the top */
+    left: 0;
+    background-color: #ffd54f; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.cartNav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.modal-content {
+  margin-bottom: 20px;
+}
+
+.modalTitle {
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size:
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-footer {
+  text-align: center !important;
+}
+
+.decisionButtons  {
+  margin: auto;
+  width: 100%;
+}
+
+.workoutTitle {
+  color: black;
+  font-size: 10px;
+}
+
+.timeText {
+  color: black;
+  font-size: 10px;
+}
+
+.createWorkout {
+  height: 50px;
+}
+
+.timeColumn {
+  padding-top: 15px !important;
+  text-align: left;
 }
