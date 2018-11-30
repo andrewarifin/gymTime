@@ -22,7 +22,7 @@ function getUrlParam(parameter, defaultvalue){
   return urlparameter;
 }
 
-var recentDate = getUrlPram('date', 'Jan 1, 2018');
+//var recentDate = getUrlPram('date', 'Jan 1, 2018');
 
 function onDateSelect() {
   var dateSelected = $('#datepicker').val()
@@ -31,10 +31,15 @@ function onDateSelect() {
 
 document.addEventListener('DOMContentLoaded', function() {
   var datepicker = document.querySelectorAll('.datepicker');
-  var dateOptions = {
-    'onCloseEnd': onDateSelect
+  var initDate = {
+    'defaultDate': 'Nov 29, 2018'
   }
-  var instances = M.Datepicker.init(datepicker, dateOptions);
+  var instances = M.Datepicker.init(datepicker, initDate);
+  $(document).ready(function() {
+    $('#txtDate').datepicker();
+    $('#txtDate').datepicker('setDate', 'today');
+});​
+
 });
 
 function loadScanner() {
