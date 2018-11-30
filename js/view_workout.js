@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
   $(document).ready(function() {
     $('#txtDate').datepicker();
     $('#txtDate').datepicker('setDate', 'today');
-});​
+  })
 
 });
 
@@ -75,7 +75,7 @@ function getDescription(machine) {
 
 function loadExercise() {
   var curr_workout = ["treadmill"];
-  
+
   /*var database = firebase.database();
   var userId = firebase.auth().currentUser;
   database.ref("userEmail/" + userId + "/date/").on('value', function(snap){
@@ -88,7 +88,7 @@ function loadExercise() {
   /*return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
 	for (var key in snapshot.val()) {
 	  if(key.date == instances) {
-		curr_workout.push(key.date.Equipmentname);  
+		curr_workout.push(key.date.Equipmentname);
 	  }
 	}
   });*/
@@ -108,7 +108,7 @@ function loadExercise() {
   if(curr_workout.length > 3) {
 	machine4 = curr_workout[3];
   }
-	
+
   if(typeof machine1 != 'undefined') {
 	var answer1 = getDescription(machine1);
 	//document.getElementById('m1').innerHTML = machine1;
@@ -126,7 +126,7 @@ function loadExercise() {
 	`;
 	document.getElementById('display').appendChild(div);
     $('#display').append(machine_1);
-  } 
+  }
 
   if(typeof machine2 != 'undefined') {
     var answer2 = getDescription(machine2);
@@ -141,7 +141,7 @@ function loadExercise() {
       </div>"
 	`;
     $("#machines").append(machine_2);
-  } 
+  }
 
   if(typeof machine3 != 'undefined') {
  	var answer3 = getDescription(machine3);
@@ -156,7 +156,7 @@ function loadExercise() {
       </div>"
 	`;
     $("#machines").append(machine_3);
-  } 
+  }
 
   if(typeof machine4 != 'undefined') {
  	var answer4 = getDescription(machine4);
@@ -171,6 +171,6 @@ function loadExercise() {
       </div>"
 	`;
     $("#machines").append(machine_4);
-  } 
+  }
 
 }
