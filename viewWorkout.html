@@ -8,8 +8,22 @@
       <link type="text/css" rel="stylesheet" href="./viewWorkout.css"  media="screen,projection"/>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+      <script>
+	  <script>
+      // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyBK0PkLlKuIb2ABAgjCYuaCizqjUFI_Le8",
+          authDomain: "gym-time-login.firebaseapp.com",
+          databaseURL: "https://gym-time-login.firebaseio.com",
+          projectId: "gym-time-login",
+          storageBucket: "gym-time-login.appspot.com",
+          messagingSenderId: "126609509380"
+        };
+        firebase.initializeApp(config);
+	  </script>
   </head>
-  <body>
+  <body onload="loadExercise()";>
     <nav>
       <div class="nav-wrapper amber lighten-2">
         <a href="#" class="brand-logo center">Gym Time</a>
@@ -33,8 +47,8 @@
 	<div class="workouts">
       <div class="col">
 	    <button type="button" class="workout_button" onclick="loadScanner()">
-	      <p class="exerciseTitle"><b>Elliptical</b></p>
-          <p class="exerciseDescription">The elliptical is a great machine that works out the entire body and increases aerobic capacity. Additionally, it's a non-impact exercise, meaning it doesn't put very much stress on your joints at all!</p>
+	       <p class="exerciseTitle"><b>Bench Press</b></p>
+           <p class="exerciseDescription">The bench press is great for improving upper body strength, and frequent usage will help create bigger and stronger pectorals, triceps and biceps. Get benching and you'll be able to fill out those t-shirts in no time!</p>
 		</button>
 	  </div>
     </div>
@@ -42,18 +56,18 @@
 	<div class="workouts">
       <div class="col">
 	    <button type="button" class="workout_button" onclick="loadScanner()">
-		  <p class="exerciseTitle"><b>Rowing Machine</b></p>
-          <p class="exerciseDescription">The rowing machine is one of the best for working out the lower body. It works out the quads in your thights, your calves, your glutes and even your abs!</p>
-	    </button>
+	       <p class="exerciseTitle"><b>Treadmill</b></p>
+           <p class="exerciseDescription">Running on the treadmill acts as a great cardiovascular workout and can greatly improve your heart health. Each time you step on a treadmill, you strengthen your heart and lower your blood pressure. Get running!</p>
+		</button>
 	  </div>
     </div>
 	
 	<div class="workouts">
       <div class="col">
 	    <button type="button" class="workout_button" onclick="loadScanner()">
-		  <p class="exerciseTitle"><b>Treadmill</b></p>
-          <p class="exerciseDescription">Running on the treadmill acts as a great cardiovascular workout and can greatly improve your heart health. Each time you step on a treadmill, you strengthen your heart and lower your blood pressure. Get running!</p>
-        </button>
+	       <p class="exerciseTitle"><b>Bench Press</b></p>
+           <p class="exerciseDescription">The bench press is great for improving upper body strength, and frequent usage will help create bigger and stronger pectorals, triceps and biceps. Get benching and you'll be able to fill out those t-shirts in no time!</p>
+		</button>
 	  </div>
     </div>
 
