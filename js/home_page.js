@@ -40,7 +40,7 @@ function syncWorkouts() {
               
             </div>
             <div class="card-action" onclick="loadWorkouts()">
-              <a href="#">Start Workout</a>
+              <a href="#">Start</a>
             </div>
           </div>
         </div>`
