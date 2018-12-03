@@ -1,14 +1,15 @@
-.scanner{
+.scannerCenter{
     width: 400px;
     overflow: hidden;
     display: block;
     height: 400px;
+    margin: 0 auto; 
 }
 
-.scannerCenter{
-    text-align: center;
+#navbar{
+    margin-bottom: 100px;
 }
 
-#glass{
-    margin-left: -400px;
+#preview{
+    margin-left: -100px
 }
