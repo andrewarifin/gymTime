@@ -67,3 +67,13 @@ function fakeEntry() {
     date: "11/30/2018"
   });
 }
+
+function logout() {
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    window.location.href = 'https://andrewarifin.github.io/gymTime';
+  }).catch(function(error) {
+    // An error happened.
+    window.alert(error)
+  });
+}
