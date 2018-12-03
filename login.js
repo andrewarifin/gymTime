@@ -31,7 +31,7 @@ function login(){
 function logout() {
 	firebase.auth().signOut().then(function() {
 	  // Sign-out successful.
-	  window.location.href = '/login.html';
+	  window.location.href = 'https://andrewarifin.github.io/gymTime/login.html';
 	}).catch(function(error) {
 	  // An error happened.
 	  window.alert(error)

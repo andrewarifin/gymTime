@@ -18,9 +18,9 @@ function create_user() {
 
 	firebase.auth().onAuthStateChanged(function(user) {
 	  if (user) {
-	    window.location.href = '/createPage.html';
+	    window.location.href = 'https://andrewarifin.github.io/gymTime/homepage.html';
 	  } else {
-	  	
+
 	  }
 	});
 
