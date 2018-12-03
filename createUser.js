@@ -1,4 +1,8 @@
-function create_account() {
+
+
+function create_user() {
+	var database = firebase.database();
+
 	var userEmail = document.getElementById("email_field").value;
 	var userPass = document.getElementById("password_field").value;	
 
@@ -7,7 +11,17 @@ function create_account() {
 	  var errorCode = error.code;
 	  var errorMessage = error.message;
 	  // ...
-
 	  window.alert("Error: " + errorMessage);
 	});
+
+	
+
+	firebase.auth().onAuthStateChanged(function(user) {
+	  if (user) {
+	    window.location.href = '/createPage.html';
+	  } else {
+	  	
+	  }
+	});
+
 }

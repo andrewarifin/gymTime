@@ -7,12 +7,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user != null){
     	window.alert(user)
     }
-  } else {
- 	document.getElementById("login_div").style.display = "initial";
-    document.getElementById("user_div").style.display = "none";  }
-});
+  } });
 
 function login(){
+
+	var database = firebase.database();
 
 	var userEmail = document.getElementById("email_field").value;
 	var userPass = document.getElementById("password_field").value;
