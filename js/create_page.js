@@ -315,6 +315,30 @@ function addWorkoutToCart(equipmentName) {
 
 }
 
+function createWorkout() {
+  let currentUser = firebase.auth().currentUser.uid;
+
+  var dateSelected = $('#datepicker').val()
+  var workoutName = $('#workoutName').val()
+  let addedWorkouts = []
+
+  $(`#addedWorkouts`).find('.workoutTitle').each(function() {
+    var val = $(this).html();
+    addedWorkouts.push(val)
+  })
+
+  var db = firebase.database().ref('users/' + currentUser)
+
+  var newWorkout = db.push()
+
+  newWorkout.set({
+    'date': dateSelected,
+    'workoutName': workoutName,
+    'workoutsChosen': addedWorkouts
+  })
+
+}
+
 $('body').on('click', '#treadmillCard', function () {
   selectTimeInterval('treadmill')
 });
