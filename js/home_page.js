@@ -4,6 +4,9 @@ $(document).ready(function(){
   allRef = firebase.database().ref()
   //fakeEntry();
   //$("#date").datepicker();
+
+  var user = firebase.auth().currentUser;
+  console.log(user.displayName)
 });
 
 function loadCreateWorkout() {
