@@ -64,10 +64,12 @@ function loadExercise() {
 
   var database = firebase.database();
   var userId = firebase.auth().currentUser;
+  document.write(userId)
   database.ref('users/' + userId).on('value', function(snap){
 	snap.forEach(function(userSnap) {
 	  if(query === userSnap.val().date) {
         var workoutMachines = userSnap.val().workoutsChosen
+		document.write(workoutMachines[0])
 		if(workoutMachines[0] != 'undefined') {
 			curr_workout.push(workoutMachines[0])
 		}

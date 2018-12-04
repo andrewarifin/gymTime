@@ -32,6 +32,7 @@ function syncWorkouts() {
       var workout_entry = snapshot.child("users").val();
       var workout_name = workout_entry.workoutName;
       var workoutDate = workout_entry.date;
+	  document.write(workoutDate)
       $("#workout_container").append(
         `<div class="card horizontal">
           <div class="card-image">
