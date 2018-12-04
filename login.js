@@ -1,24 +1,30 @@
 
 
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    window.location.href = 'https://andrewarifin.github.io/gymTime/homepage.html';
-    var user = firebase.auth().currentUser.displayName;
-    if (user != null){
-    	window.alert(user)
-    }
-  } });
+function checkUser(){
+	var user = firebase.auth().currentUser;
+
+	if (user) {
+		window.location.href = './homepage.html';
+	}
+}
+
 
 function login(){
+
+	checkUser();
 
 	var database = firebase.database();
 
 	var userEmail = document.getElementById("email_field").value;
 	var userPass = document.getElementById("password_field").value;
-	console.log(userEmail);
 
 
-	firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+	firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(res => {
+		console.log('hello');
+
+		window.location.href = './homepage.html';
+	})
+	.catch(function(error) {
 	  // Handle Errors here.
 	  var errorCode = error.code;
 	  var errorMessage = error.message;
@@ -26,6 +32,7 @@ function login(){
 
 	  window.alert("Error: " + errorMessage);
 	});
-}
 
+
+}
 

@@ -350,3 +350,16 @@ $('body').on('click', '#squatrackCard', function () {
 $('body').on('click', '#benchpressCard', function () {
   selectTimeInterval('benchpress')
 });
+
+
+
+function loggingout() {
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    //window.location.href = 'https://andrewarifin.github.io/gymTime';
+    window.location.href = './index.html';
+  }).catch(function(error) {
+    // An error happened.
+    window.alert(error)
+  });
+}
