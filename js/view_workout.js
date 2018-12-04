@@ -43,16 +43,26 @@ function getDescription(machine) {
   }
 }
 
+function getUrlParam(parameter, defaultvalue){
+    var urlparameter = defaultvalue;
+    if(window.location.href.indexOf(parameter) > -1){
+        urlparameter = getUrlVars()[parameter];
+    }
+    return urlparameter;
+}
+
 function loadExercise() {
-  var queryStart = window.location.href.indexOf("?") + 1
-  var queryEnd = (window.location.href.indexOf("#") + 1) || window.location.href.length + 1
-  var query = window.location.href.slice(queryStart, queryEnd - 1)
-  if (query === window.location.href || query === "") {
+  //var queryStart = window.location.href.indexOf("?") + 1
+  //var queryEnd = (window.location.href.indexOf("?") + 13
+  //var query = (window.location.href).slice(queryStart, queryEnd - 1)
+  //if (query === window.location.href || query === "") {
 	//return;
-  }
+  //}
   
-  //let curr_workout = []
-  var curr_workout = ["Treadmill", "Treadmill", "Bench press", "Squat rack"];
+  var dateCheck = getUrlParam('date', 'Decc 6, 2018');
+  
+  let curr_workout = []
+  //var curr_workout = ["Treadmill", "Treadmill", "Bench press", "Squat rack"];
   var machine1;
   var machine2;
   var machine3;
@@ -67,6 +77,7 @@ function loadExercise() {
   database.ref('users/' + userId).on('value', function(snap){
 	console.log(snap.val());
 	
+<<<<<<< HEAD
     for(var key in snap.val()) {
       for (var item of snap.val()[key].date) {
         var workout_date = item
@@ -91,6 +102,33 @@ function loadExercise() {
       }
     }
   }
+=======
+	for(var key in snap.val()) {
+	  for (var item of snap.val()[key].date) {
+	    var workout_date = item
+	    if(userId === key && query === workout_date) {
+          var workoutMachines = snap.val()[key].workoutsChosen
+		  if(workoutMachines[0] != 'undefined') {
+			curr_workout.push(workoutMachines[0])
+		  }
+		  if(workoutMachines[1] != 'undefined') {
+			curr_workout.push(workoutMachines[1])
+		  }
+		  if(workoutMachines[2] != 'undefined') {
+			curr_workout.push(workoutMachines[2])
+		  }
+		  if(workoutMachines[3] != 'undefined') {
+			curr_workout.push(workoutMachines[3])
+		  }
+		}
+	    else {
+	      return;
+	    }
+	  }
+	}
+  })
+  
+>>>>>>> 6831fe22eb6f6fd4aa4038b10ef9d6de240a44e8
   
   if(curr_workout.length > 0) {
   	machine1 = curr_workout[0];
