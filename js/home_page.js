@@ -13,8 +13,9 @@ function loadCreateWorkout() {
   location.replace("createPage.html");
 }
 
-function loadWorkouts() {
-  location.replace("viewWorkout.html");
+function loadWorkouts(date) {
+  console.log("workoutDate: " + date)
+  window.location.href = "viewWorkout.html" + "?date=" + date;
 }
 
 function syncWorkouts() {
@@ -42,7 +43,7 @@ function syncWorkouts() {
               <p>${workoutDate}</p>
               
             </div>
-            <div class="card-action" onclick="loadWorkouts()">
+            <div class="card-action" onclick="loadWorkouts($(this).prev().find('p').text())">
               <a href="#">Start</a>
             </div>
           </div>
