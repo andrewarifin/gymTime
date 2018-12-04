@@ -5,8 +5,20 @@ $(document).ready(function(){
   //fakeEntry();
   //$("#date").datepicker();
 
-  var user = firebase.auth().currentUser;
-  console.log(user.displayName)
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log(user.email)  
+
+    $("#nav_div").append(
+        `<p class="nav navbar-text navbar-right">Hello, ${user.email}!</p>`
+      );
+  } 
+  else {
+    console.log('no user')
+  }
+});
+
+
 });
 
 function loadCreateWorkout() {
@@ -76,6 +88,7 @@ function logout() {
     // Sign-out successful.
     //window.location.href = 'https://andrewarifin.github.io/gymTime';
     window.location.href = './index.html';
+    window.alert('logged out')
   }).catch(function(error) {
     // An error happened.
     window.alert(error)

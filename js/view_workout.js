@@ -174,3 +174,15 @@ function loadExercise() {
   }
 
 }
+
+function logout() {
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    //window.location.href = 'https://andrewarifin.github.io/gymTime';
+    window.location.href = './index.html';
+    window.alert('logged out')
+  }).catch(function(error) {
+    // An error happened.
+    window.alert(error)
+  });
+}
