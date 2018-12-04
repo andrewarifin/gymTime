@@ -63,15 +63,15 @@ function loadExercise() {
   let machine_4 = ``
 
   var database = firebase.database();
-  var userId = firebase.auth().currentUser;
+  var userId = firebase.auth().currentUser.uid;
   database.ref('users/' + userId).on('value', function(snap){
 	console.log(snap.val());
 	
-	for(var key in snap.child("users").val()) {
+	for(var key in snap.val()) {
 	  for (var item of snap.val()[key].date) {
 	    var workout_date = item
 	    if(userId === key && query === workout_date) {
-          var workoutMachines = snap.child("users").val()[key].workoutsChosen
+          var workoutMachines = snap.val()[key].workoutsChosen
 		  if(workoutMachines[0] != 'undefined') {
 			curr_workout.push(workoutMachines[0])
 		  }
