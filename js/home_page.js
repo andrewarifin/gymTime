@@ -5,18 +5,6 @@ $(document).ready(function(){
   //fakeEntry();
   //$("#date").datepicker();
 
-  firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    console.log(user.email)  
-
-    $("#nav_div").append(
-        `<p class="nav navbar-text navbar-right">Hello, ${user.email}!</p>`
-      );
-  } 
-  else {
-    console.log('no user')
-  }
-});
 
 
 });

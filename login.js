@@ -11,13 +11,24 @@ function checkUser(){
 
 function login(){
 
+	checkUser();
+
 	var database = firebase.database();
 
 	var userEmail = document.getElementById("email_field").value;
 	var userPass = document.getElementById("password_field").value;
 
 
-	firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+	firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(res => {
+		console.log('hello');
+
+		var user = firebase.auth().currentUser;
+		
+		var db = firebase.database().ref();
+		db.child("users").child(user.uid).set(userName)
+		window.location.href = './homepage.html';
+	})
+	.catch(function(error) {
 	  // Handle Errors here.
 	  var errorCode = error.code;
 	  var errorMessage = error.message;
@@ -26,7 +37,6 @@ function login(){
 	  window.alert("Error: " + errorMessage);
 	});
 
-	checkUser();
-}
 
+}
 
