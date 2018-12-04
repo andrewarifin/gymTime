@@ -88,7 +88,7 @@ function logout() {
     // Sign-out successful.
     //window.location.href = 'https://andrewarifin.github.io/gymTime';
     window.location.href = './index.html';
-    window.alert('logged out')
+
   }).catch(function(error) {
     // An error happened.
     window.alert(error)
