@@ -4,14 +4,18 @@ $(document).ready(function(){
   allRef = firebase.database().ref()
   //fakeEntry();
   //$("#date").datepicker();
+
+
+
 });
 
 function loadCreateWorkout() {
   location.replace("createPage.html");
 }
 
-function loadWorkouts() {
-  location.replace("viewWorkout.html");
+function loadWorkouts(date) {
+  console.log("workoutDate: " + date)
+  window.location.href = "viewWorkout.html" + "?date=" + date;
 }
 
 function syncWorkouts() {
@@ -39,7 +43,7 @@ function syncWorkouts() {
               <p>${workoutDate}</p>
               
             </div>
-            <div class="card-action" onclick="loadWorkouts()">
+            <div class="card-action" onclick="loadWorkouts($(this).prev().find('p').text())">
               <a href="#">Start</a>
             </div>
           </div>
@@ -65,5 +69,17 @@ function fakeEntry() {
   firebase.database().ref('workout/').push({
     name: "leg day :(",
     date: "11/30/2018"
+  });
+}
+
+function logout() {
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    //window.location.href = 'https://andrewarifin.github.io/gymTime';
+    window.location.href = './index.html';
+
+  }).catch(function(error) {
+    // An error happened.
+    window.alert(error)
   });
 }

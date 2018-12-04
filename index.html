@@ -5,44 +5,44 @@
     <title>Gym Time</title>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="./homePage.css"  media="screen,projection"/>
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="login.css" rel="stylesheet" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <nav>
+    <div class="nav-wrapper amber lighten-2">
+      <a href="#" class="brand-logo center">Gym Time</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+      </ul>
+    </div>
+  </nav>
   </head>
-  <body onload="syncWorkouts()">
-    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyBK0PkLlKuIb2ABAgjCYuaCizqjUFI_Le8",
-        authDomain: "gym-time-login.firebaseapp.com",
-        databaseURL: "https://gym-time-login.firebaseio.com",
-        projectId: "gym-time-login",
-        storageBucket: "gym-time-login.appspot.com",
-        messagingSenderId: "126609509380"
-      };
-      firebase.initializeApp(config);
-    </script>
+  <body>
+   <div class="container" id="login_div">
+    <div class="form blue-gr" action="/login">
+      <label for="user">Email: </label>
+        <input class="form-control" id="email_field" name="user" autofocus required>
+      <label for="password">Password: </label>
+        <input class="form-control" id="password_field" name="user" type="password" autofocus required>
+      <br/>
+      <button class="btn waves-effect waves-light blue-grey" onclick="login()" >Log In
+        <i class="material-icons right">send</i>
+      </button>
+    </div>  
+    <a href="./createUser.html"> New User? Sign up.</a> 
+  </div>
 
-    <div class="navbar-fixed">
-      <nav id="nav_bar">
-        <div class="nav-wrapper amber lighten-2">
-          <a href="#" class="brand-logo center">Gym Time</a>
-          <ul id="nav-mobile" class="left hide-on-med-and-down">
-        </div>
-      </nav>
-    </div>
-
-    <div id="workout_container" class="container" style="margin-top: 20px"></div>
-
-    <div class="fixed-action-btn" onclick="loadCreateWorkout()">
-      <div class="add">
-        <button class="btn waves-effect waves-light btn-float plus" type="submit" name="action"><font size="8">+</font></button>
-      </div>
-    </div>
-
-	  <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./js/home_page.js"></script>
-
-  </body>
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBK0PkLlKuIb2ABAgjCYuaCizqjUFI_Le8",
+    authDomain: "gym-time-login.firebaseapp.com",
+    databaseURL: "https://gym-time-login.firebaseio.com",
+    projectId: "gym-time-login",
+    storageBucket: "gym-time-login.appspot.com",
+    messagingSenderId: "126609509380"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="login.js"></script>
+</html>
