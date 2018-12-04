@@ -67,29 +67,29 @@ function loadExercise() {
   database.ref('users/' + userId).on('value', function(snap){
 	console.log(snap.val());
 	
-	for(var key in snap.val()) {
-	  for (var item of snap.val()[key].date) {
-	    var workout_date = item
-	    if(userId === key && query === workout_date) {
-          var workoutMachines = snap.val()[key].workoutsChosen
-		  if(workoutMachines[0] != 'undefined') {
-			curr_workout.push(workoutMachines[0])
-		  }
-		  if(workoutMachines[1] != 'undefined') {
-			curr_workout.push(workoutMachines[1])
-		  }
-		  if(workoutMachines[2] != 'undefined') {
-			curr_workout.push(workoutMachines[2])
-		  }
-		  if(workoutMachines[3] != 'undefined') {
-			curr_workout.push(workoutMachines[3])
-		  }
-		}
-	    else {
-	      return;
-	    }
-	  }
-	}
+    for(var key in snap.val()) {
+      for (var item of snap.val()[key].date) {
+        var workout_date = item
+        if(userId === key && query === workout_date) {
+            var workoutMachines = snap.val()[key].workoutsChosen
+        if(workoutMachines[0] != 'undefined') {
+        curr_workout.push(workoutMachines[0])
+        }
+        if(workoutMachines[1] != 'undefined') {
+        curr_workout.push(workoutMachines[1])
+        }
+        if(workoutMachines[2] != 'undefined') {
+        curr_workout.push(workoutMachines[2])
+        }
+        if(workoutMachines[3] != 'undefined') {
+        curr_workout.push(workoutMachines[3])
+        }
+      }
+        else {
+          return;
+        }
+      }
+    }
   }
   
   if(curr_workout.length > 0) {
