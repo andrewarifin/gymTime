@@ -43,16 +43,26 @@ function getDescription(machine) {
   }
 }
 
+function getUrlParam(parameter, defaultvalue){
+    var urlparameter = defaultvalue;
+    if(window.location.href.indexOf(parameter) > -1){
+        urlparameter = getUrlVars()[parameter];
+    }
+    return urlparameter;
+}
+
 function loadExercise() {
-  var queryStart = window.location.href.indexOf("?") + 1
-  var queryEnd = (window.location.href.indexOf("#") + 1) || window.location.href.length + 1
-  var query = window.location.href.slice(queryStart, queryEnd - 1)
-  if (query === window.location.href || query === "") {
+  //var queryStart = window.location.href.indexOf("?") + 1
+  //var queryEnd = (window.location.href.indexOf("?") + 13
+  //var query = (window.location.href).slice(queryStart, queryEnd - 1)
+  //if (query === window.location.href || query === "") {
 	//return;
-  }
+  //}
   
-  //let curr_workout = []
-  var curr_workout = ["Treadmill", "Treadmill", "Bench press", "Squat rack"];
+  var dateCheck = getUrlParam('date', 'Decc 6, 2018');
+  
+  let curr_workout = []
+  //var curr_workout = ["Treadmill", "Treadmill", "Bench press", "Squat rack"];
   var machine1;
   var machine2;
   var machine3;
@@ -90,7 +100,8 @@ function loadExercise() {
 	    }
 	  }
 	}
-  }
+  })
+  
   
   if(curr_workout.length > 0) {
   	machine1 = curr_workout[0];
