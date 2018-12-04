@@ -64,28 +64,30 @@ function loadExercise() {
 
   var database = firebase.database();
   var userId = firebase.auth().currentUser;
-  document.write(userId)
   database.ref('users/' + userId).on('value', function(snap){
-	console.log(snapshot.val());
-	snap.forEach(function(userSnap) {
-	  if(query === userSnap.val().date) {
-        var workoutMachines = userSnap.val().workoutsChosen
-		document.write(workoutMachines[0])
-		if(workoutMachines[0] != 'undefined') {
+	console.log(snap.val());
+	
+	for(var key in snap.child("users").val()) {
+	  for (var item of snap.val()[key].date) {
+	    var workout_date = item
+	    if(userId === key && query === workout_date) {
+          var workoutMachines = snap.child("users").val()[key].workoutsChosen
+		  if(workoutMachines[0] != 'undefined') {
 			curr_workout.push(workoutMachines[0])
-		}
-		if(workoutMachines[1] != 'undefined') {
+		  }
+		  if(workoutMachines[1] != 'undefined') {
 			curr_workout.push(workoutMachines[1])
-		}
-		if(workoutMachines[2] != 'undefined') {
+		  }
+		  if(workoutMachines[2] != 'undefined') {
 			curr_workout.push(workoutMachines[2])
-		}
-		if(workoutMachines[3] != 'undefined') {
+		  }
+		  if(workoutMachines[3] != 'undefined') {
 			curr_workout.push(workoutMachines[3])
+		  }
 		}
-	  }
-	  else {
-	    return;
+	    else {
+	      return;
+	    }
 	  }
 	}
   }
