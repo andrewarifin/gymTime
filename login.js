@@ -22,10 +22,6 @@ function login(){
 	firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(res => {
 		console.log('hello');
 
-		var user = firebase.auth().currentUser;
-		
-		var db = firebase.database().ref();
-		db.child("users").child(user.uid).set(userName)
 		window.location.href = './homepage.html';
 	})
 	.catch(function(error) {
