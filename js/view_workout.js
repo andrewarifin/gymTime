@@ -66,6 +66,7 @@ function loadExercise() {
   var userId = firebase.auth().currentUser;
   document.write(userId)
   database.ref('users/' + userId).on('value', function(snap){
+	console.log(snapshot.val());
 	snap.forEach(function(userSnap) {
 	  if(query === userSnap.val().date) {
         var workoutMachines = userSnap.val().workoutsChosen
