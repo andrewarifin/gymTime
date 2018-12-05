@@ -92,6 +92,7 @@ function loadExercise() {
         var workoutMachines = workout_entry.workoutsChosen  
 		document.write(workoutMachines[0])
         if(workoutMachines[0] != 'undefined') {
+	      document.write(workoutMachines[0])
 	      curr_workout.push(workoutMachines[0])
         }
 		if(workoutMachines[1] != 'undefined') {
