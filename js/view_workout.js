@@ -88,7 +88,7 @@ function loadExercise() {
 	  var workout_entry = snap.child("users").child(firebase.auth().currentUser.uid).val()[key];
 	  var workout_date = workout_entry.date;
 	  if(dateCheck === workout_date) {
-		document.write("hh")
+		//document.write("hh")
         var workoutMachines = workout_entry.workoutsChosen  
 		document.write(workoutMachines[0])
 		document.write(workoutMachines[1])
