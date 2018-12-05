@@ -34,9 +34,9 @@ function getDescription(machine) {
   switch(machine) {
 	case "Treadmill":
 	  return "Running on the treadmill acts as a great cardiovascular workout and can greatly improve your heart health. Each time you step on a treadmill, you strengthen your heart and lower your blood pressure. Get running!";
-	case "Squat rack":
+	case "Squat Rack":
 	  return "The squat rack will pack significant size and strength to your lower body, specifically your quads, glutes and hamstrings. It will also help improve flexibility and overall increase core strength!";
-	case "Bench press":
+	case "Bench Press":
 	  return "The bench press is great for improving upper body strength, and frequent usage will help create bigger and stronger pectorals, triceps and biceps. Get benching and you'll be able to fill out those t-shirts in no time!"
 	default:
 	  return;
@@ -141,9 +141,7 @@ function loadExercise() {
     }
 	
 	if(typeof machine1 != 'undefined') {
-	  document.write(machine1)
 	  var answer1 = getDescription(machine1);
-	  document.write(answer1)
 	  machine_1 = `
 	    <div class="workouts">
           <div class="col">
@@ -157,51 +155,50 @@ function loadExercise() {
       $('#machines').append(machine_1);
     }
   
-  if(typeof machine2 != 'undefined') {
-	var answer2 = getDescription(machine2);
-	machine_2 = `
-	  <div class="workouts">
-        <div class="col">
-	      <button type="button" class="workout_button" onclick="loadScanner()">
-	        <p class="exerciseTitle"><b>${machine2}</b></p>
-            <p class="exerciseDescription">${answer2}</p>
-		  </button>
-	    </div>
-      </div>
-	`
-    $('#machines').append(machine_2);
-  }
+    if(typeof machine2 != 'undefined') {
+	  var answer2 = getDescription(machine2);
+	  machine_2 = `
+	    <div class="workouts">
+          <div class="col">
+	        <button type="button" class="workout_button" onclick="loadScanner()">
+	          <p class="exerciseTitle"><b>${machine2}</b></p>
+              <p class="exerciseDescription">${answer2}</p>
+		    </button>
+	      </div>
+        </div>
+	  `
+      $('#machines').append(machine_2);
+    }
   
-  if(typeof machine3 != 'undefined') {
-	var answer3 = getDescription(machine3);
-	machine_3 = `
-	  <div class="workouts">
-        <div class="col">
-	      <button type="button" class="workout_button" onclick="loadScanner()">
-	        <p class="exerciseTitle"><b>${machine3}</b></p>
-            <p class="exerciseDescription">${answer3}</p>
-		  </button>
-	    </div>
-      </div>
-	`
-    $('#machines').append(machine_3);
-  }
+    if(typeof machine3 != 'undefined') {
+	  var answer3 = getDescription(machine3);
+	  machine_3 = `
+	    <div class="workouts">
+          <div class="col">
+	        <button type="button" class="workout_button" onclick="loadScanner()">
+	          <p class="exerciseTitle"><b>${machine3}</b></p>
+              <p class="exerciseDescription">${answer3}</p>
+		    </button>
+	      </div>
+        </div>
+	  `
+      $('#machines').append(machine_3);
+    }
   
-  if(typeof machine4 != 'undefined') {
-	var answer4 = getDescription(machine1);
-	machine_4 = `
-	  <div class="workouts">
-        <div class="col">
-	      <button type="button" class="workout_button" onclick="loadScanner()">
-	        <p class="exerciseTitle"><b>${machine4}</b></p>
-            <p class="exerciseDescription">${answer4}</p>
-		  </button>
-	    </div>
-      </div>
-	`
-    $('#machines').append(machine_4);
-  }
-	
+    if(typeof machine4 != 'undefined') {
+ 	  var answer4 = getDescription(machine1);
+	  machine_4 = `
+	    <div class="workouts">
+          <div class="col">
+	        <button type="button" class="workout_button" onclick="loadScanner()">
+	          <p class="exerciseTitle"><b>${machine4}</b></p>
+              <p class="exerciseDescription">${answer4}</p>
+		    </button>
+	      </div>
+        </div>
+	  `
+      $('#machines').append(machine_4);
+    }
   })
   
   
