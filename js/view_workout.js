@@ -91,8 +91,10 @@ function loadExercise() {
 		document.write("hh")
         var workoutMachines = workout_entry.workoutsChosen  
 		document.write(workoutMachines[0])
+		document.write(workoutMachines[1])
+		document.write(workoutMachines[2])
+		document.write(workoutMachines[3])
         if(workoutMachines[0] != 'undefined') {
-	      document.write(workoutMachines[0])
 	      curr_workout.push(workoutMachines[0])
         }
 		if(workoutMachines[1] != 'undefined') {
@@ -106,8 +108,6 @@ function loadExercise() {
 	    }		
 	  }
 	}
-	
-	document.write(curr_workout[0])
 
 	/*for(var key in snap.val()) {
 	  for (var item of snap.val()[key].date) {
@@ -128,9 +128,6 @@ function loadExercise() {
 			  curr_workout.push(workoutMachines[3])
 		    }
 		  }
-	      else {
-	        return;
-	      }
 		}
 	  }
 	}*/
