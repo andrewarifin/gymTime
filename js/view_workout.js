@@ -79,7 +79,7 @@ function loadExercise() {
   let machine_4 = ``
 
   var database = firebase.database();
-  let userId = firebase.auth().currentUser.uid;
+  //let userId = firebase.auth().currentUser.uid;
   database.ref(/*'users/' + userId*/).on('value', function(snap){
 	console.log(snap.val());
 	
