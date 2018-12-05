@@ -62,7 +62,14 @@ function loadExercise() {
 	return;
   }*/
   
-  var dateCheck = window.location.href.split('date=').pop();
+  //var dateCheck = window.location.href.split('date=').pop();
+ 
+  var dateURL = window.location.href
+  var dateCheck = dateURL.substr(dateURL.indexOf('date=') + 1, dateURL.indexOf('date=') + 4)
+  dateCheck += ' '
+  dateCheck += dateURL.substr(dateURL.indexOf('date=') + 7, dateURL.indexOf('date=') + 10)
+  dateCheck += ' '
+  dateCheck += dateURL.substr(dateURL.indexOf('date=') + 14)
   document.write(dateCheck)
   
   //var dateCheck = getUrlParam('date', 'Dec 6, 2018');
@@ -83,7 +90,7 @@ function loadExercise() {
   database.ref(/*'users/' + userId*/).on('value', function(snap){
 	console.log(snap.val());
 	
-	for(key in snapshot.child("users").child(firebase.auth().currentUser.uid).val()){
+	for(key in snap.child("users").child(firebase.auth().currentUser.uid).val()){
 	  var workout_entry = snapshot.child("users").child(firebase.auth().currentUser.uid).val()[key];
 	  var workout_date = workout_entry.date;
 	  if(dateCheck === workout_date) {
