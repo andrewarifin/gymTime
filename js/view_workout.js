@@ -81,7 +81,7 @@ function loadExercise() {
 
   var database = firebase.database();
   //let userId = firebase.auth().currentUser.uid;
-  database.ref(/*'users/' + userId*/).on('value', function(snap){
+  database.ref().on('value', function(snap){
 	console.log(snap.val());
 	
 	for(key in snap.child("users").child(firebase.auth().currentUser.uid).val()){
@@ -128,6 +128,20 @@ function loadExercise() {
 	}*/
   })
   
+  document.write(machine1)
+  document.write(machine2)
+  document.write(machine3)
+  document.write(machine4)
+  document.write(curr_workout[0])
+  document.write(curr_workout[1])
+  document.write(curr_workout[2])
+  document.write(curr_workout[3])
+  document.write(curr_workout.length)
+  document.write(machine1)
+  document.write(machine2)
+  document.write(machine3)
+  document.write(machine4)
+  
   if(curr_workout.length > 0) {
   	machine1 = curr_workout[0];
   }
@@ -141,7 +155,6 @@ function loadExercise() {
 	machine4 = curr_workout[3];
   }
 
-  document.write("hello")
   if(typeof machine1 != 'undefined') {
 	document.write(machine1)
 	var answer1 = getDescription(machine1);
