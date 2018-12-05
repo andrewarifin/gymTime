@@ -87,6 +87,8 @@ function loadExercise() {
 	for(key in snap.child("users").child(firebase.auth().currentUser.uid).val()){
 	  var workout_entry = snap.child("users").child(firebase.auth().currentUser.uid).val()[key];
 	  var workout_date = workout_entry.date;
+	  document.write(workout_entry)
+	  document.write(workout_date)
 	  if(dateCheck === workout_date) {
         var workoutMachines = workout_entry.workoutsChosen  
         if(workoutMachines[0] != 'undefined') {
@@ -105,6 +107,8 @@ function loadExercise() {
 		return;
 	  }
 	}
+	
+	document.write(curr_workout[0])
 
 	/*for(var key in snap.val()) {
 	  for (var item of snap.val()[key].date) {
