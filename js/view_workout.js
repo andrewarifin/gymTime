@@ -67,10 +67,6 @@ function loadExercise() {
   dateCheck = dateCheck.slice(0, 4) + dateCheck.slice(6, 10) + dateCheck.slice(12)
  
   dateCheck = dateCheck.replace(/%/g, " ")
-  document.write(dateCheck)
-  document.write("hello")
-  
-  //var dateCheck = getUrlParam('date', 'Dec 6, 2018');
   
   let curr_workout = []
   //var curr_workout = ["Treadmill", "Treadmill", "Bench press", "Squat rack"];
