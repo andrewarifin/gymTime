@@ -106,8 +106,6 @@ function loadExercise() {
 	    if(workoutMachines[3] != 'undefined') {
 		  curr_workout.push(workoutMachines[3])
 	    }		
-	  } else {
-		return;
 	  }
 	}
 	
