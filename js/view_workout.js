@@ -88,11 +88,7 @@ function loadExercise() {
 	  var workout_entry = snap.child("users").child(firebase.auth().currentUser.uid).val()[key];
 	  var workout_date = workout_entry.date;
 	  if(dateCheck === workout_date) {
-        var workoutMachines = workout_entry.workoutsChosen 
-        document.write(workoutMachines[0])
-        document.write(workoutMachines[1])
-        document.write(workoutMachines[2])
-        document.write(workoutMachines[3])		
+        var workoutMachines = workout_entry.workoutsChosen 		
         if(workoutMachines[0] != 'undefined') {
 	      curr_workout.push(workoutMachines[0])
         }
@@ -107,11 +103,6 @@ function loadExercise() {
 	    }		
 	  }
 	}
-	
-	document.write(curr_workout[0])
-  document.write(curr_workout[1])
-  document.write(curr_workout[2])
-  document.write(curr_workout[3])
 
 	/*for(var key in snap.val()) {
 	  for (var item of snap.val()[key].date) {
@@ -135,43 +126,36 @@ function loadExercise() {
 		}
 	  }
 	}*/
-  })
-  
-  document.write(curr_workout[0])
-  document.write(curr_workout[1])
-  document.write(curr_workout[2])
-  document.write(curr_workout[3])
-  document.write(curr_workout.length)
-  
-  if(curr_workout.length > 0) {
-  	machine1 = curr_workout[0];
-  }
-  if(curr_workout.length > 1) {
- 	machine2 = curr_workout[1];
-  }
-  if(curr_workout.length > 2) {
-	machine3 = curr_workout[2];
-  }
-  if(curr_workout.length > 3) {
-	machine4 = curr_workout[3];
-  }
-
-  if(typeof machine1 != 'undefined') {
-	document.write(machine1)
-	var answer1 = getDescription(machine1);
-	document.write(answer1)
-	machine_1 = `
-	  <div class="workouts">
-        <div class="col">
-	      <button type="button" class="workout_button" onclick="loadScanner()">
-	        <p class="exerciseTitle"><b>${machine1}</b></p>
-            <p class="exerciseDescription">${answer1}</p>
-		  </button>
-	    </div>
-      </div>
-	`
-    $('#machines').append(machine_1);
-  }
+	
+	if(curr_workout.length > 0) {
+  	  machine1 = curr_workout[0];
+    }
+    if(curr_workout.length > 1) {
+ 	  machine2 = curr_workout[1];
+    }
+    if(curr_workout.length > 2) {
+	  machine3 = curr_workout[2];
+    }
+    if(curr_workout.length > 3) {
+	  machine4 = curr_workout[3];
+    }
+	
+	if(typeof machine1 != 'undefined') {
+	  document.write(machine1)
+	  var answer1 = getDescription(machine1);
+	  document.write(answer1)
+	  machine_1 = `
+	    <div class="workouts">
+          <div class="col">
+	        <button type="button" class="workout_button" onclick="loadScanner()">
+	          <p class="exerciseTitle"><b>${machine1}</b></p>
+              <p class="exerciseDescription">${answer1}</p>
+		    </button>
+	      </div>
+        </div>
+	  `
+      $('#machines').append(machine_1);
+    }
   
   if(typeof machine2 != 'undefined') {
 	var answer2 = getDescription(machine2);
@@ -217,6 +201,12 @@ function loadExercise() {
 	`
     $('#machines').append(machine_4);
   }
+	
+  })
+  
+  
+
+  
 }
 
 function logout() {
