@@ -1,4 +1,10 @@
-
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    window.location.href = './homepage.html';
+  } else {
+    // No user is signed in.
+  }
+});
 
 function create_user() {
 	var database = firebase.database();
