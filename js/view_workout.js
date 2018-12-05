@@ -66,6 +66,7 @@ function loadExercise() {
   
   dateCheck = dateCheck.slice(0, 4) + dateCheck.slice(6, 10) + dateCheck.slice(12)
  
+  dateCheck = dateCheck.replace(/%/g, " ")
   //var dateURL = window.location.href
   //var dateCheck = dateURL.substr(dateURL.indexOf('date=') + 1, dateURL.indexOf('date=') + 4)
   //dateCheck += ' '
