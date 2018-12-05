@@ -78,33 +78,57 @@ function loadExercise() {
   let machine_4 = ``
 
   var database = firebase.database();
-  var userId = firebase.auth().currentUser.uid;
-  database.ref('users/' + userId).on('value', function(snap){
+  let userId = firebase.auth().currentUser.uid;
+  database.ref(/*'users/' + userId*/).on('value', function(snap){
 	console.log(snap.val());
-
-	for(var key in snap.val()) {
-	  for (var item of snap.val()[key].date) {
-	    var workout_date = item
-	    if(userId === key && dateCheck === workout_date) {
-          var workoutMachines = snap.val()[key].workoutsChosen
-		  if(workoutMachines[0] != 'undefined') {
-			curr_workout.push(workoutMachines[0])
-		  }
-		  if(workoutMachines[1] != 'undefined') {
-			curr_workout.push(workoutMachines[1])
-		  }
-		  if(workoutMachines[2] != 'undefined') {
-			curr_workout.push(workoutMachines[2])
-		  }
-		  if(workoutMachines[3] != 'undefined') {
-			curr_workout.push(workoutMachines[3])
-		  }
-		}
-	    else {
-	      return;
+	
+	for(key in snapshot.child("users").child(firebase.auth().currentUser.uid).val()){
+	  var workout_entry = snapshot.child("users").child(firebase.auth().currentUser.uid).val()[key];
+	  var workout_date = workout_entry.date;
+	  if(dateCheck === workout_date) {
+        var workoutMachines = workout_entry.workoutsChosen  
+        if(workoutMachines[0] != 'undefined') {
+	      curr_workout.push(workoutMachines[0])
+        }
+		if(workoutMachines[1] != 'undefined') {
+		  curr_workout.push(workoutMachines[1])
 	    }
+	    if(workoutMachines[2] != 'undefined') {
+		  curr_workout.push(workoutMachines[2])
+	    }
+	    if(workoutMachines[3] != 'undefined') {
+		  curr_workout.push(workoutMachines[3])
+	    }		
+	  } else {
+		return;
 	  }
 	}
+
+	/*for(var key in snap.val()) {
+	  for (var item of snap.val()[key].date) {
+		if(item != 'undefined') {
+	    var workout_date = item
+	      if(userId === key && dateCheck === workout_date) {
+            var workoutMachines = snap.val()[key].workoutsChosen
+		    if(workoutMachines[0] != 'undefined') {
+			  curr_workout.push(workoutMachines[0])
+		    }
+		    if(workoutMachines[1] != 'undefined') {
+			  curr_workout.push(workoutMachines[1])
+		    }
+		    if(workoutMachines[2] != 'undefined') {
+			  curr_workout.push(workoutMachines[2])
+		    }
+		    if(workoutMachines[3] != 'undefined') {
+			  curr_workout.push(workoutMachines[3])
+		    }
+		  }
+	      else {
+	        return;
+	      }
+		}
+	  }
+	}*/
   })
   
   if(curr_workout.length > 0) {
