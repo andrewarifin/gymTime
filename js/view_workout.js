@@ -63,6 +63,7 @@ function loadExercise() {
   }*/
   
   var dateCheck = window.location.href.split('date=').pop();
+  document.write(dateCheck)
   
   //var dateCheck = getUrlParam('date', 'Dec 6, 2018');
   
