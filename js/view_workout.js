@@ -68,8 +68,8 @@ function loadExercise() {
  
   dateCheck = dateCheck.replace(/%/g, " ")
   
-  let curr_workout = []
-  //var curr_workout = ["Treadmill", "Treadmill", "Bench press", "Squat rack"];
+  //let curr_workout = []
+  var curr_workout = ["Treadmill", "Treadmill", "Bench press", "Squat rack"];
   var machine1;
   var machine2;
   var machine3;
