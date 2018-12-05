@@ -39,7 +39,7 @@
 	
 	<script>
 	  function loadWorkouts() {
-        window.history.back();
+        location.replace("viewWorkout.html" + "?date=" + $(this).prev().find('p').text());
       }
 	</script>
 	
