@@ -67,13 +67,8 @@ function loadExercise() {
   dateCheck = dateCheck.slice(0, 4) + dateCheck.slice(6, 10) + dateCheck.slice(12)
  
   dateCheck = dateCheck.replace(/%/g, " ")
-  //var dateURL = window.location.href
-  //var dateCheck = dateURL.substr(dateURL.indexOf('date=') + 1, dateURL.indexOf('date=') + 4)
-  //dateCheck += ' '
-  //dateCheck += dateURL.substr(dateURL.indexOf('date=') + 7, dateURL.indexOf('date=') + 10)
-  //dateCheck += ' '
-  //dateCheck += dateURL.substr(dateURL.indexOf('date=') + 14)
   document.write(dateCheck)
+  document.write("hello")
   
   //var dateCheck = getUrlParam('date', 'Dec 6, 2018');
   
