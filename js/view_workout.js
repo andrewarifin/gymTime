@@ -62,6 +62,9 @@ function loadExercise() {
 	return;
   }*/
   
+  var stateObj = { foo: "bar" };
+  history.pushState(stateObj, "page 2", "bar.html");
+  
   var dateCheck = window.location.href.split('date=').pop();
   
   dateCheck = dateCheck.slice(0, 4) + dateCheck.slice(6, 10) + dateCheck.slice(12)
