@@ -68,8 +68,8 @@ function loadExercise() {
  
   dateCheck = dateCheck.replace(/%/g, " ")
   
-  //let curr_workout = []
-  var curr_workout = ["Treadmill", "Treadmill", "Bench press", "Squat rack"];
+  let curr_workout = []
+  //var curr_workout = ["Treadmill", "Treadmill", "Bench press", "Squat rack"];
   var machine1;
   var machine2;
   var machine3;
@@ -141,8 +141,11 @@ function loadExercise() {
 	machine4 = curr_workout[3];
   }
 
+  document.write("hello")
   if(typeof machine1 != 'undefined') {
+	document.write(machine1)
 	var answer1 = getDescription(machine1);
+	document.write(answer1)
 	machine_1 = `
 	  <div class="workouts">
         <div class="col">
