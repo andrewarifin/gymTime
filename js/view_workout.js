@@ -63,7 +63,7 @@ function loadExercise() {
   }*/
   
   var stateObj = { foo: "bar" };
-  history.pushState(stateObj, "page 2", "bar.html");
+  history.pushState(stateObj, "page 2", window.location.href);
   
   var dateCheck = window.location.href.split('date=').pop();
   
