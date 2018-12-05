@@ -128,11 +128,6 @@ function loadExercise() {
 	}*/
   })
   
-  document.write(curr_workout[0])
-  document.write(curr_workout[1])
-  document.write(curr_workout[2])
-  document.write(curr_workout[3])
-  
   if(curr_workout.length > 0) {
   	machine1 = curr_workout[0];
   }
