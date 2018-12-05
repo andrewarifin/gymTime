@@ -88,7 +88,11 @@ function loadExercise() {
 	  var workout_entry = snap.child("users").child(firebase.auth().currentUser.uid).val()[key];
 	  var workout_date = workout_entry.date;
 	  if(dateCheck === workout_date) {
-        var workoutMachines = workout_entry.workoutsChosen  
+        var workoutMachines = workout_entry.workoutsChosen 
+        document.write(workoutMachines[0])
+        document.write(workoutMachines[1])
+        document.write(workoutMachines[2])
+        document.write(workoutMachines[3])		
         if(workoutMachines[0] != 'undefined') {
 	      curr_workout.push(workoutMachines[0])
         }
@@ -103,6 +107,11 @@ function loadExercise() {
 	    }		
 	  }
 	}
+	
+	document.write(curr_workout[0])
+  document.write(curr_workout[1])
+  document.write(curr_workout[2])
+  document.write(curr_workout[3])
 
 	/*for(var key in snap.val()) {
 	  for (var item of snap.val()[key].date) {
@@ -128,19 +137,11 @@ function loadExercise() {
 	}*/
   })
   
-  document.write(machine1)
-  document.write(machine2)
-  document.write(machine3)
-  document.write(machine4)
   document.write(curr_workout[0])
   document.write(curr_workout[1])
   document.write(curr_workout[2])
   document.write(curr_workout[3])
   document.write(curr_workout.length)
-  document.write(machine1)
-  document.write(machine2)
-  document.write(machine3)
-  document.write(machine4)
   
   if(curr_workout.length > 0) {
   	machine1 = curr_workout[0];
