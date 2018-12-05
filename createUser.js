@@ -1,4 +1,10 @@
-
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    window.location.href = './homepage.html';
+  } else {
+    // No user is signed in.
+  }
+});
 
 function create_user() {
 	var database = firebase.database();
@@ -6,8 +12,6 @@ function create_user() {
 	var userEmail = document.getElementById("email_field").value;
 	var userPass = document.getElementById("password_field").value;	
 	var userName = document.getElementById("name_field").value;
-	
-
 
 
 	firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).then(res => {
@@ -16,7 +20,9 @@ function create_user() {
 		var user = firebase.auth().currentUser;
 		
 		var db = firebase.database().ref();
-		db.child("users").child(user.uid).set(userName)
+		db.child("users").child(user.uid).set(userName);
+		window.location.href = './homepage.html';
+
 
 	})
 
@@ -30,13 +36,5 @@ function create_user() {
 	});
 
 
- 
-	firebase.auth().onAuthStateChanged(function(user) {
-	  if (user) {
-	    window.location.href = './homepage.html';
-	  } else {
-
-	  }
-	});
 
 }

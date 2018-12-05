@@ -1,5 +1,5 @@
 
-
+/*
 function checkUser(){
 	var user = firebase.auth().currentUser;
 
@@ -7,11 +7,21 @@ function checkUser(){
 		window.location.href = './homepage.html';
 	}
 }
+*/
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    window.location.href = './homepage.html';
+  } else {
+    // No user is signed in.
+  }
+});
+
 
 
 function login(){
 
-	checkUser();
+	//checkUser();
 
 	var database = firebase.database();
 
