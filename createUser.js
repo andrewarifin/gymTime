@@ -14,7 +14,8 @@ function create_user() {
 		var user = firebase.auth().currentUser;
 		
 		var db = firebase.database().ref();
-		db.child("users").child(user.uid).set(userName)
+		db.child("users").child(user.uid).set(userName);
+		window.location.href = './homepage.html';
 
 
 	})
@@ -29,13 +30,5 @@ function create_user() {
 	});
 
 
- 
-	firebase.auth().onAuthStateChanged(function(user) {
-	  if (user) {
-	    window.location.href = './homepage.html';
-	  } else {
-
-	  }
-	});
 
 }
