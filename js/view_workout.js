@@ -52,14 +52,19 @@ function getUrlParam(parameter, defaultvalue){
 }
 
 function loadExercise() {
-  //var queryStart = window.location.href.indexOf("?") + 1
-  //var queryEnd = (window.location.href.indexOf("?") + 13
-  //var query = (window.location.href).slice(queryStart, queryEnd - 1)
-  //if (query === window.location.href || query === "") {
-	//return;
-  //}
+  /*var queryStart = window.location.href.indexOf("?") + 1
+  var queryEnd = (window.location.href.indexOf("?") + 13
+  var query
+  if (window.location.href).slice(queryStart, queryEnd - 1) != 'undefined') {
+	query = window.location.href).slice(queryStart, queryEnd - 1)
+  }
+  if (query === window.location.href || query === "") {
+	return;
+  }*/
   
-  var dateCheck = getUrlParam('date', 'Decc 6, 2018');
+  var dateCheck = window.location.href.split('date=').pop();
+  
+  //var dateCheck = getUrlParam('date', 'Dec 6, 2018');
   
   let curr_workout = []
   //var curr_workout = ["Treadmill", "Treadmill", "Bench press", "Squat rack"];
@@ -76,11 +81,11 @@ function loadExercise() {
   var userId = firebase.auth().currentUser.uid;
   database.ref('users/' + userId).on('value', function(snap){
 	console.log(snap.val());
-	
+
 	for(var key in snap.val()) {
 	  for (var item of snap.val()[key].date) {
 	    var workout_date = item
-	    if(userId === key && query === workout_date) {
+	    if(userId === key && dateCheck === workout_date) {
           var workoutMachines = snap.val()[key].workoutsChosen
 		  if(workoutMachines[0] != 'undefined') {
 			curr_workout.push(workoutMachines[0])
@@ -101,7 +106,6 @@ function loadExercise() {
 	  }
 	}
   })
-  
   
   if(curr_workout.length > 0) {
   	machine1 = curr_workout[0];

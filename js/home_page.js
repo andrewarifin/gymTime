@@ -23,13 +23,13 @@ function syncWorkouts() {
   allRef = firebase.database().ref()
   
   allRef.on("value", function(snapshot) {
-    console.log(snapshot.val());
+    console.log(snapshot.child("users").child(firebase.auth().currentUser.uid));
 
     $(".card horizontal").remove();
 
-    for(key in snapshot.child("workout").val()){
-      var workout_entry = snapshot.child("workout").val()[key];
-      var workoutName = workout_entry.name;
+    for(key in snapshot.child("users").child(firebase.auth().currentUser.uid).val()){
+      var workout_entry = snapshot.child("users").child(firebase.auth().currentUser.uid).val()[key];
+      var workout_Name = workout_entry.workoutName;
       var workoutDate = workout_entry.date;
       $("#workout_container").append(
         `<div class="card horizontal">
@@ -39,7 +39,7 @@ function syncWorkouts() {
           <div class="card-stacked">
             <div class="card-content">
               
-              <h5>${workoutName}</h5>
+              <h5>${workout_Name}</h5>
               <p>${workoutDate}</p>
               
             </div>
