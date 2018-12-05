@@ -89,6 +89,7 @@ function loadExercise() {
 	  var workout_date = workout_entry.date;
 	  document.write(workout_entry)
 	  document.write(workout_date)
+	  document.write(dateCheck)
 	  if(dateCheck === workout_date) {
         var workoutMachines = workout_entry.workoutsChosen  
         if(workoutMachines[0] != 'undefined') {
