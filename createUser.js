@@ -6,8 +6,6 @@ function create_user() {
 	var userEmail = document.getElementById("email_field").value;
 	var userPass = document.getElementById("password_field").value;	
 	var userName = document.getElementById("name_field").value;
-	
-
 
 
 	firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).then(res => {
@@ -17,6 +15,7 @@ function create_user() {
 		
 		var db = firebase.database().ref();
 		db.child("users").child(user.uid).set(userName)
+
 
 	})
 
