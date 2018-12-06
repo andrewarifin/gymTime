@@ -4,8 +4,7 @@ $(document).ready(function(){
   allRef = firebase.database().ref()
   //fakeEntry();
   //$("#date").datepicker();
-
-
+  //$("#loading_wheel").hide();
 
 });
 
@@ -21,14 +20,21 @@ function loadWorkouts(date) {
 function syncWorkouts() {
 
   allRef = firebase.database().ref()
+  $(".card horizontal").remove();
+  $("#loading_wheel").show();
   
   allRef.on("value", function(snapshot) {
-    console.log(snapshot.child("users").child(firebase.auth().currentUser.uid));
-
-    $(".card horizontal").remove();
-
-    for(key in snapshot.child("users").child(firebase.auth().currentUser.uid).val()){
-      var workout_entry = snapshot.child("users").child(firebase.auth().currentUser.uid).val()[key];
+    var currUid = firebase.auth().currentUser.uid;
+    
+    for(key in snapshot.child("users").child(currUid).val()){
+      $("#loading_wheel").hide(); 
+      var workout_entry = snapshot.child("users").child(currUid).val()[key];
+      if(workout_entry.workoutName == undefined && workout_entry.date == undefined){
+        $("#workout_container").append(
+          `<p id="no_workout_error">No Workout Added :(</p>`
+        )
+        break;
+      }
       var workout_Name = workout_entry.workoutName;
       var workoutDate = workout_entry.date;
       $("#workout_container").append(
@@ -38,10 +44,10 @@ function syncWorkouts() {
           </div>
           <div class="card-stacked">
             <div class="card-content">
-              
+                
               <h5>${workout_Name}</h5>
               <p>${workoutDate}</p>
-              
+                
             </div>
             <div class="card-action" onclick="loadWorkouts($(this).prev().find('p').text())">
               <a href="#">Start</a>
